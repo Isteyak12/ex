@@ -53,6 +53,7 @@ button {
 button:hover {
     opacity: 0.9;
 }
+
 .text-center h1, .text-center p {
     font-size: 60px; /* Adjust this value as needed */
 }
@@ -75,4 +76,12 @@ button:hover {
     align-items: center;
     font-weight: 400;
     text-decoration: underline;
+}
+
+.bottom-center {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px; /* Adjust as needed */
 }
