@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <div class="text-center">
-      <a href="#" class="button-link"><button id="about-button">ABOUT</button></a>
+        <a href="#" class="button-link"><button id="about-button">ABOUT</button></a>
     </div>
 
     <div class="background-container">
-      <img src="gifs/here.gif" alt="Background" class="background-gif" />
+        <img src="gifs/here.gif" alt="Background" class="background-gif">
     </div>
 
     <!-- buttons start here -->
     <div class="button-container">
-      <a href="https://sdbncode.github.io/SdbnCode/" class="button-link"><button>STEVE</button></a>
-      <a href="https://syndicategit.github.io/portfolio-website-2023/" class="button-link"><button>RAYMOND</button></a>
-      <a href="https://parin-parikh.github.io/personal_website/" class="button-link"><button>PARIN</button></a>
-      <a href="https://isteyak-digital-resume-app.streamlit.app/" class="button-link"><button>ISTEYAK</button></a>
+        <a href="https://sdbncode.github.io/SdbnCode/" class="button-link"><button>STEVE</button></a>
+        <a href="https://syndicategit.github.io/portfolio-website-2023/" class="button-link"><button>RAYMOND</button></a>
+        <a href="https://parin-parikh.github.io/personal_website/" class="button-link"><button>PARIN</button></a>
+        <a href="https://isteyak-digital-resume-app.streamlit.app/" class="button-link"><button>ISTEYAK</button></a>
+        <button id="change-background">CHANGE THEME</button>
     </div>
 
     <!-- Back Button -->
     <div class="bottom-center">
-      <button id="back-button" onclick="goBack()">⬅️ GO BACK</button>
+        <button id="back-button" onclick="goBack()">⬅️ GO BACK</button>
     </div>
 
     <script>
-      function goBack() {
-        window.history.back();
-      }
+        function goBack() {
+            window.history.back();
+        }
+
+        var backgrounds = ["gifs/here.gif", "gifs/best.gif", "gifs/galaxy-space.gif"];
+        var currentBackgroundIndex = 0; // Moved outside to keep track between clicks
+
+        function changeBackground() {
+            var imgElement = document.querySelector('.background-container img.background-gif');
+            imgElement.src = backgrounds[currentBackgroundIndex];
+            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length; // Increment and loop index
+        }
+
+        document.getElementById('change-background').addEventListener('click', changeBackground);
     </script>
-  </body>
+</body>
 </html>
